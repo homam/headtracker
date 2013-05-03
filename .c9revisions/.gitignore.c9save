@@ -1,0 +1,4 @@
+{"ts":1367600553269,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":false,"ts":1367600558795,"patch":[[{"diffs":[[1,"node_modules"]],"start1":0,"start2":0,"length1":0,"length2":12}]],"length":12,"saved":false}
+{"ts":1367600605888,"patch":[[{"diffs":[[0,"_modules"],[1,"/*"]],"start1":4,"start2":4,"length1":8,"length2":10}]],"length":14,"saved":false}
+{"ts":1367600647014,"patch":[[{"diffs":[[-1,"node_modules/*"],[1,"coverage.html\n.DS_Store\nlib-cov\n*.seed\n*.log\n*.csv\n*.dat\n*.out\n*.pid\n*.swp\n*.swo\nbenchmarks/graphs\ntesting\nnode_modules/\ntesting\n.coverage_data\ncover_html\ntest.js\n.idea"]],"start1":0,"start2":0,"length1":14,"length2":168}]],"length":168,"saved":false}

@@ -10,7 +10,7 @@
   },
   "dependencies":{
     "express": "*"
-  }
+  },
   "bugs": "https://github.com/homam/headtrackr/issues",
   "main": "app.js"
 }
