@@ -16,13 +16,25 @@
 				position: relative;
 			}
 			#video-container {
-				position: relative;;
+				position: relative;
+				height: 250px;
 			}
 			#overlay{
 				position: absolute;
 				top: 0px;
 				z-index: 100001;
 				display: block;
+			}
+			#status-messages{
+				display: none;
+			}
+			#takephoto { 
+				font-size: 120%;
+				text-decoration: none;
+				color:blue;
+			}
+			#takephoto:hover{
+				text-decoration: underline;;
 			}
 		</style>
 	</head>
@@ -33,12 +45,14 @@
 			<video id="vid" autoplay loop width="320" height="240"></video>
 			<canvas id="overlay"></canvas>
 		</div>
+		<a id="takephoto" href="javascript:void(0);">Take a snapshot!</a>
 		<img id="photo" />
 		
-		<p id='gUMMessage'></p>
-		<p>Status : <span id='headtrackerMessage'></span></p>
-		<p><input type="button" onclick="htracker.stop();htracker.start();" value="reinitiate facedetection"></input>
-		
+		<section id="status-messages">
+			<p id='gUMMessage'></p>
+			<p>Status : <span id='headtrackerMessage'></span></p>
+			<p><input type="button" onclick="htracker.stop();htracker.start();" value="reinitiate facedetection"></input>
+		</section>
 		<script>
 		  // set up video and canvas elements needed
 		
@@ -98,6 +112,7 @@
 				// once we have stable tracking, draw rectangle
 				if (event.detection == "CS") {
 					overlayContext.save();
+					overlayContext.scale(1);
 					overlayContext.translate(event.x, event.y)
 					overlayContext.rotate(event.angle-(Math.PI/2));
 					//overlayContext.strokeStyle = "#00CC00";
@@ -111,10 +126,15 @@
 				}
 			});
 
+			document.getElementById('takephoto').addEventListener('click', function(){
+				takepicture();
+				return false;
+			});
+
 		  	function takepicture() {
 			    var snapshotCanvas = document.createElement("canvas");
-			    snapshotCanvas.width = videoInput.width*1;
-			    snapshotCanvas.height = videoInput.height*1;
+			    snapshotCanvas.width = videoInput.width;
+			    snapshotCanvas.height = videoInput.height;
 			    var snapshotContext = snapshotCanvas.getContext('2d');
 			    snapshotContext.drawImage(videoInput, 0, 0, snapshotCanvas.width, snapshotCanvas.height);
 			    snapshotContext.drawImage(overlay, 0, 0, snapshotCanvas.width, snapshotCanvas.height);
