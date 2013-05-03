@@ -3,11 +3,14 @@
   "description": "headtracking via webcam and WebRTC/getUserMedia",
   "keywords": ["webcam", "headtracking", "computer vision", "facetracking"],
   "version": "1.0.2",
-  "author": "Audun Mathias Øygard <amoygard@gmail.com>",
+  "author": "Audun Mathias Øygard <amoygard@gmail.com>, Forked by @homam",
   "repository": {
     "type": "git",
-    "url": "https://github.com/auduno/headtrackr.git"
+    "url": "https://github.com/homam/headtrackr.git"
   },
-  "bugs": "https://github.com/auduno/headtrackr/issues",
-  "main": "headtrackr.js"
+  "dependencies":{
+    "express": "*"
+  }
+  "bugs": "https://github.com/homam/headtrackr/issues",
+  "main": "app.js"
 }
